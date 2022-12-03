@@ -1,5 +1,5 @@
 
-//JS&B Shadows by NeedSomePractice
+//JS&B Shadows by NeedSomePractice v2
 
 //Settings
 
@@ -57,6 +57,7 @@ float3 Shadows1(in float4 pos : SV_Position, in float2 texcoord : TEXCOORD) : CO
 		}
 		
 		shadow_v = max(shadow_c.r, max(shadow_c.g, shadow_c.b)) * multiplier_x * multiplier_y;
+		shadow_v *= shadow_v;
 	}
 	
 	float3 color_dest = tex2D(ReShade::BackBuffer, texcoord).rgb;
